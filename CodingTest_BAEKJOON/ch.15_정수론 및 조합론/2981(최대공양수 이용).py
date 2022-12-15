@@ -1,4 +1,4 @@
-from math import gcd
+# from math import gcd
 n = int(input())
 
 arr = []
@@ -8,8 +8,18 @@ m = []
 for i in range(n):
     arr.append(int(input()))
 
+arr.sort()
+
 for i in range(n - 1):
     interval.append(arr[i + 1] - arr[i])
+
+
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
 
 prev = interval[0]
 
